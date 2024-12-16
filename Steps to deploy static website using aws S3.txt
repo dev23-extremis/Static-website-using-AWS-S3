@@ -1,0 +1,61 @@
+Step 1: Make an S3 Bucket
+    1. Open AWS Management Console: Locate and access the S3 service from the AWS Management Console.
+    2. Create a Bucket:
+    • Click the "Create bucket"
+    • Enter a distinctive name for the bucket eg, devbuck123.
+◦ Choose the area in which you would like your bucket to be located. 
+        ◦ Everything else leave default for now so block public access will actually get overridden anyway. 
+        ◦ Click "Create bucket".
+Step 2: Enable Public Access
+
+1. Edit Block Public Access Settings:
+        ◦ In S3 bucket settings, select "Permissions".
+        ◦ Under "Block Public Access (bucket settings)", click on "Edit".
+        ◦ Deselect "Block all public access" and save your changes.
+2. Attach a Bucket Policy:
+        ◦ Under the Permissions tab scroll down to Bucket Policy
+        ◦ Paste this bucket policy with the modified bucket name of mybucky123 where applicable.
+{
+    "Version": "2012-10-17",
+    "Statement": [
+"Sid": "devbuck123",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": [
+"arn:aws:s3:::devbuck123/*",
+                "arn:aws:s3:::devbuck123"
+            ]
+        }
+    ]
+}
+        ◦ Save the policy.
+Step 3: Set Up Bucket for Static Website Hosting
+
+    1. Go to the "Properties" Tab:
+        ◦ Scroll to the "Static website hosting" section.
+        ◦ Click "Enable" static website hosting.
+        ◦ Set Index document to index.html.
+◦ Set Error document as error.html (optional).
+        ◦ Save changes.
+Step 4: Upload Website Files
+
+    1. Prepare Your Website Files:
+        ◦ Create an index.html file for the College Admission form.
+◦ Optionally, create other resources such as style.css, script.js, or images. 
+    2. Upload Files to the Bucket:
+        ◦ Go to the "Objects" tab. 
+        ◦ Click "Upload", select your files, and upload them.
+◦ All uploaded files must be public.
+Step 5: Make Objects Public
+
+    1. Give Files Public Access
+        ◦ Select all the uploaded files
+        ◦ Click on "Actions" > "Make public" if necessary, depending on permissions.
+Because we've attached a bucket policy, the objects should be already public. 
+Step 6: Test the Website
+
+    1. Get the URL of the Website:
+        ◦ In the section on "Static website hosting", look for the Endpoint URL, like http://mybucky123.s3-website-us-east-1.amazonaws.com. 
+    2. Go to the Website:
+◦ Enter this URL into a web browser to see your static web site.

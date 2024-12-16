@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: rgb(240, 248, 255);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 320px;
+    background-color: #f5f7fa;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    text-align: center;
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+form {
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #6c7e9c;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+input[type="radio"] {
+    margin-top: 8px;
+}
+
+input[type="radio"] + label {
+    display: inline-block;
+    font-size: 13px;
+    margin-right: 10px;
+    color: #555;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    background-color: #6c7e9c;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #566b85;
+}
+
+footer {
+    text-align: center;
+    margin-top: 25px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #777;
+}
+
+footer b {
+    color: #333;
+}
